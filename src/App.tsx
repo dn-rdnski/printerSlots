@@ -13,7 +13,7 @@ import {
 type BookingMap = Record<string, string>;
 
 function App() {
-  const API_URL = 'http://localhost:3001/api/bookings';
+  const API_URL = '/api/bookings';
 
   const [baseDate, setBaseDate] = useState(startOfDay(new Date()));
   const [userName, setUserName] = useState<string>(() => localStorage.getItem('printer_userName') || '');
