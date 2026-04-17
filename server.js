@@ -8,7 +8,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = 3001;
+const DEFAULT_PORT = 3001;
+const PORT = process.env.PORT || DEFAULT_PORT;
 const DATA_FILE = path.join(__dirname, 'bookings.json');
 
 app.use(cors());
@@ -18,6 +19,10 @@ app.use(express.json());
 if (!fs.existsSync(DATA_FILE)) {
   fs.writeFileSync(DATA_FILE, JSON.stringify({}));
 }
+
+const distDir = path.join(__dirname, 'dist');
+app.use(express.static(distDir));
+
 
 // Get all bookings
 app.get('/api/bookings', (req, res) => {

@@ -1,3 +1,8 @@
+# Na potem
+
+docker build -t printer_slots .
+docker run --restart always -p 3001:3001 -e PORT=3001 -v $(pwd)/bookings.json:/app/bookings.json printer-slots
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
