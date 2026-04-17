@@ -1,7 +1,9 @@
 # Na potem
 
-docker build -t printer_slots .
-docker run --restart always -p 3001:3001 -e PORT=3001 -v $(pwd)/bookings.json:/app/bookings.json printer-slots
+```
+docker build -t printer_slots .  
+docker run --restart always -p 3001:3001 -e PORT=3001 -v $(pwd)/bookings.json:/app/bookings.json printer_slots  
+```
 
 # React + TypeScript + Vite
 
